@@ -3,13 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const backgroundMusic1 = document.getElementById('background-music-1');
     const backgroundMusic2 = document.getElementById('background-music-2');
     
-    // Keep track of sound state
-    let isMuted = false;
+    // Keep track of sound state - start muted
+    let isMuted = true;
     
     if (backgroundMusic1 && backgroundMusic2) {
-        // Set volume for each track
-        backgroundMusic1.volume = 0.1; // Lower volume for rain sound (10%)
-        backgroundMusic2.volume = 0.2; // Keep theme song at 20%
+        // Set volume for each track - start with volume 0 (muted)
+        backgroundMusic1.volume = 0; // Start muted
+        backgroundMusic2.volume = 0; // Start muted
         
         // Loop both tracks
         backgroundMusic1.loop = true;
@@ -19,6 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const soundToggle = document.getElementById('sound-toggle');
         const volumeUpIcon = soundToggle.querySelector('.fa-volume-up');
         const volumeMuteIcon = soundToggle.querySelector('.fa-volume-mute');
+        
+        // Set initial icon state to muted
+        volumeUpIcon.style.display = 'none';
+        volumeMuteIcon.style.display = 'inline';
         
         soundToggle.addEventListener('click', function() {
             if (isMuted) {
