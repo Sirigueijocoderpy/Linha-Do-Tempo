@@ -25,6 +25,16 @@
     
     <!-- AOS Animation Library (opcional) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Background Music Players (hidden) -->
+    <audio id="background-music-1" style="display:none;">
+        <source src="Msuiquinhas/mixkit-calm-thunderstorm-in-the-jungle-2415.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="background-music-2" style="display:none;">
+        <source src="Msuiquinhas/01 Title Theme.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 </head>
 <body>
     <!-- Navegação -->
@@ -44,6 +54,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="sound-toggle" class="btn btn-sm btn-outline-light ms-2">
+                            <i class="fas fa-volume-up"></i>
+                            <i class="fas fa-volume-mute" style="display: none;"></i>
+                        </button>
                     </li>
                     <li class="nav-item">
                         <button id="theme-toggle" class="btn btn-sm btn-outline-light ms-2">

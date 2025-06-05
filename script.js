@@ -1,4 +1,77 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Play both background music tracks simultaneously
+    const backgroundMusic1 = document.getElementById('background-music-1');
+    const backgroundMusic2 = document.getElementById('background-music-2');
+    
+    // Keep track of sound state
+    let isMuted = false;
+    
+    if (backgroundMusic1 && backgroundMusic2) {
+        // Set volume for each track
+        backgroundMusic1.volume = 0.1; // Lower volume for rain sound (10%)
+        backgroundMusic2.volume = 0.2; // Keep theme song at 20%
+        
+        // Loop both tracks
+        backgroundMusic1.loop = true;
+        backgroundMusic2.loop = true;
+        
+        // Setup sound toggle button
+        const soundToggle = document.getElementById('sound-toggle');
+        const volumeUpIcon = soundToggle.querySelector('.fa-volume-up');
+        const volumeMuteIcon = soundToggle.querySelector('.fa-volume-mute');
+        
+        soundToggle.addEventListener('click', function() {
+            if (isMuted) {
+                // Unmute audio
+                backgroundMusic1.volume = 0.1;
+                backgroundMusic2.volume = 0.2;
+                volumeUpIcon.style.display = 'inline';
+                volumeMuteIcon.style.display = 'none';
+                isMuted = false;
+            } else {
+                // Mute audio
+                backgroundMusic1.volume = 0;
+                backgroundMusic2.volume = 0;
+                volumeUpIcon.style.display = 'none';
+                volumeMuteIcon.style.display = 'inline';
+                isMuted = true;
+            }
+        });
+        
+        // Play music when user interacts with the page (to comply with autoplay policies)
+        const playMusic = () => {
+            // Play both tracks
+            backgroundMusic1.play().catch(error => {
+                console.log('Auto-play was prevented for track 1. User interaction is required:', error);
+            });
+            
+            backgroundMusic2.play().catch(error => {
+                console.log('Auto-play was prevented for track 2. User interaction is required:', error);
+            });
+            
+            // Remove the event listeners once music starts playing
+            document.removeEventListener('click', playMusic);
+            document.removeEventListener('keydown', playMusic);
+            document.removeEventListener('touchstart', playMusic);
+        };
+        
+        // Try to play immediately (may be blocked by browser)
+        playMusic();
+        
+        // Add event listeners for user interaction to start music
+        document.addEventListener('click', playMusic);
+        document.addEventListener('keydown', playMusic);
+        document.addEventListener('touchstart', playMusic);
+        
+        // Handle page visibility changes to restart music if needed
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'visible') {
+                backgroundMusic1.play().catch(e => console.log('Could not auto-resume music 1:', e));
+                backgroundMusic2.play().catch(e => console.log('Could not auto-resume music 2:', e));
+            }
+        });
+    }
+
     // Adicionar classe fade-in a todos os itens da timeline
     const timelineItems = document.querySelectorAll('.timeline-item');
     timelineItems.forEach((item, index) => {
