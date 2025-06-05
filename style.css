@@ -1,0 +1,1077 @@
+:root {
+    --timeline-color: #3498db;
+    --timeline-dark: #2c3e50;
+    --timeline-light: #f8f9fa;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--timeline-light);
+    padding-top: 76px; /* Compensar a navbar fixa */
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(135deg, var(--timeline-color), var(--timeline-dark));
+    color: white;
+    padding: 100px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: var(--timeline-light);
+    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%);
+}
+
+/* Timeline Styles */
+.timeline-container {
+    position: relative;
+    padding: 60px 0;
+}
+
+.timeline-line {
+    position: absolute;
+    width: 6px;
+    background-color: var(--timeline-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 10px;
+    z-index: 0;
+}
+
+.timeline-container > .text-center {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    color: #222;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    padding: 48px 32px 32px 32px;
+    margin-bottom: 60px;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.timeline-content {
+    padding: 25px;
+    background-color: white;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-date {
+    display: inline-block;
+    background-color: var(--timeline-color);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.timeline-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.5s ease;
+}
+
+.timeline-img:hover {
+    transform: scale(1.02);
+}
+
+.timeline-dot {
+    width: 25px;
+    height: 25px;
+    background-color: var(--timeline-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    border: 4px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-left {
+    left: 0;
+    width: 45%;
+}
+
+.timeline-right {
+    left: 55%;
+    width: 45%;
+}
+
+.timeline-content.timeline-left {
+    margin-right: 40px;
+    padding-right: 30px;
+}
+
+.timeline-content.timeline-right {
+    margin-left: 40px;
+    padding-left: 30px;
+}
+
+/* Animation classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--timeline-dark);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    margin: 20px auto;
+    gap: 8px;
+    width: 100%;
+}
+
+.footer .col-md-6.text-center.text-md-end {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    line-height: 40px;
+    margin: 0 8px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--timeline-color);
+    transform: translateY(-3px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 30px;
+    }
+    
+    .timeline-dot {
+        left: 30px;
+    }
+    
+    .timeline-left, .timeline-right {
+        left: 60px;
+        width: calc(100% - 80px);
+        margin-right: 0;
+        margin-left: 0;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    
+    .timeline-content {
+        padding: 20px 15px;
+    }
+    
+    .timeline-date {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+    }
+    
+    .timeline-img {
+        height: 220px;
+    }
+    
+    .timeline-container > .text-center {
+        padding: 32px 15px 24px;
+        border-radius: 14px;
+        width: 90%;
+    }
+    
+    .header {
+        padding: 60px 15px 50px;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    .py-5 {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+    
+    .my-5 {
+        margin-top: 2.5rem !important;
+        margin-bottom: 2.5rem !important;
+    }
+    
+    .footer .social-icons {
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+}
+
+/* Ajustes para smartphones */
+@media (max-width: 576px) {
+    .display-2 {
+        font-size: 2.5rem;
+    }
+    
+    .display-4 {
+        font-size: 1.8rem;
+    }
+    
+    .display-5 {
+        font-size: 1.5rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
+    
+    .timeline-content {
+        padding: 15px 12px;
+    }
+    
+    .timeline-img {
+        height: 180px;
+    }
+    
+    .timeline-date {
+        padding: 6px 15px;
+    }
+    
+    .timeline-container > .text-center {
+        padding: 25px 12px 20px;
+        width: 95%;
+    }
+    
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        margin: 0 5px;
+    }
+    
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+    
+    /* Melhorar UX em telas pequenas */
+    .timeline-dot {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .timeline-item {
+        margin-bottom: 60px;
+    }
+}
+
+.textoabu {
+    color: #555 !important;
+}
+
+/* Melhorias de responsividade geral */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Adicionar mais breakpoints para melhor responsividade */
+@media (max-width: 992px) {
+    .display-2 {
+        font-size: 3rem;
+    }
+    
+    .display-4 {
+        font-size: 2.2rem;
+    }
+    
+    .display-5 {
+        font-size: 1.8rem;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
+    
+    .header {
+        padding: 70px 20px 60px;
+    }
+}
+
+/* Estilo responsivo para o modal de imagens */
+.image-modal img {
+    max-width: 90%;
+    max-height: 80vh; /* Limitar a altura em relação à viewport */
+    object-fit: contain;
+}
+
+@media (max-width: 576px) {
+    .image-modal img {
+        max-width: 95%;
+        max-height: 70vh;
+    }
+    
+    .modal-close {
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+    }
+}
+
+/* Adicionar espaçamento para os elementos de âncora com header fixo */
+[id] {
+    scroll-margin-top: 85px;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

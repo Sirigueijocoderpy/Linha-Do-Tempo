@@ -1,0 +1,95 @@
+/* Tema Escuro */
+body.dark-theme {
+    --timeline-color: #00bcd4;
+    --timeline-dark: #121212;
+    --timeline-light: #1e1e1e;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Ajustes de Header */
+body.dark-theme .header {
+    background: linear-gradient(135deg, #00bcd4, #121212);
+}
+
+body.dark-theme .header::after {
+    background-color: #1e1e1e;
+}
+
+/* Ajustes de Timeline */
+body.dark-theme .timeline-content {
+    background-color: #2d2d2d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .timeline-dot {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajustes de Navegação */
+body.dark-theme .navbar {
+    background-color: #121212 !important;
+}
+
+body.dark-theme #theme-toggle i.fa-moon {
+    display: none;
+}
+
+body.dark-theme #theme-toggle i.fa-sun,
+body:not(.dark-theme) #theme-toggle i.fa-moon {
+    display: inline-block;
+}
+
+body:not(.dark-theme) #theme-toggle i.fa-sun {
+    display: none;
+}
+
+/* Section backgrounds */
+body.dark-theme .bg-light {
+    background-color: #2d2d2d !important;
+}
+
+body.dark-theme .text-muted {
+    color: #9e9e9e !important;
+}
+
+/* Cards e componentes */
+body.dark-theme .card,
+body.dark-theme .modal-content {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+body.dark-theme hr {
+    border-color: rgba(255,255,255,0.1);
+}
+
+/* Links */
+body.dark-theme a:not(.btn):not(.badge) {
+    color: #00bcd4;
+}
+
+body.dark-theme a:not(.btn):not(.badge):hover {
+    color: #4dd0e1;
+}
+
+/* Botões outline */
+body.dark-theme .btn-outline-primary {
+    color: #00bcd4;
+    border-color: #00bcd4;
+}
+
+body.dark-theme .btn-outline-primary:hover {
+    background-color: #00bcd4;
+    color: #121212;
+}
+
+body.dark-theme .timeline-container > .text-center {
+    background: #2d2d2d;
+    color: #e0e0e0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+}
+
+body.dark-theme .textoabu {
+    color: #e0e0e0 !important;
+} 

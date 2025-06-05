@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Linha do Tempo | Jornada Pessoal</title>
+    <meta name="description" content="Linha do tempo pessoal mostrando os marcos importantes da minha vida">
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!--Icone da pagina-->
+    <link rel="shortcut icon" href="img/TimeDark.png" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark-theme.css">
+    
+    <!-- AOS Animation Library (opcional) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: var(--timeline-dark);">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-clock me-2"></i>Minha Timeline</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#inicio">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#timeline">Linha do Tempo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="btn btn-sm btn-outline-light ms-2">
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-sun"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Cabeçalho -->
+    <header id="inicio" class="header">
+        <div class="container">
+            <h1 class="display-2 fw-bold mb-4">Minha Linha do Tempo</h1>
+            <p class="lead fs-4">Uma jornada pela minha jornada profissional e minhas previsoes do futuro</p>
+            <a href="#timeline" class="btn btn-light btn-lg mt-4">
+                <i class="fas fa-arrow-down me-2"></i>Explorar
+            </a>
+        </div>
+    </header>
+    
+    <!-- Sobre -->
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="display-5 mb-4">Sobre Esta Timeline</h2>
+                    <p class="lead">Uma visualização de minhas conquistas, jornada profissional, inspirações e sobretudo minha historia.</p>
+                    <p>Cada ponto na linha do tempo representa um período significativo, com detalhes e imagens que contam uma história de crescimento pessoal e profissional.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sobre Mim" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Linha do Tempo -->
+    <main id="timeline" class="container timeline-container my-5 py-5">
+        <div class="text-center  mb-5">
+            <h2 class="display-4">Minha Jornada</h2>
+            <p class="lead text-muted textoabu">Explore os momentos mais importantes da minha vida</p>
+        </div>
+        <div class="timeline-line"></div>
+        
+        <!-- Ano 1 -->
+        <section class="row timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content timeline-left">
+                <div class="timeline-date">2013-2017</div>
+                <img src="https://images.unsplash.com/photo-1602610411365-76e8c2a88e18?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Criança jogando videogame" class="timeline-img">
+                <h3>Primeiros Passos</h3>
+                <p>Tinha muito interesse em jogos e tecnologia, isso me inspirou a me tornar um programador.</p>
+                <div class="mt-3">
+                    <span class="badge bg-primary me-2">Infância</span>
+                    <span class="badge bg-secondary">Games</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ano 2 -->
+        <section class="row timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content timeline-right">
+                <div class="timeline-date">2018-2023</div>
+                <img src="https://images.unsplash.com/photo-1672309558498-cfcc89afff25?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Estudando lógica de programação" class="timeline-img">
+                <h3>Descobertas</h3>
+                <p>Introdução a logica da programação, porem, não me aprofundei muito nesses anos, estava focado na escola.</p>
+                <div class="mt-3">
+                    <span class="badge bg-success me-2">Educação</span>
+                    <span class="badge bg-info">Logica</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ano 3 -->
+        <section class="row timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content timeline-left">
+                <div class="timeline-date">2024</div>
+                <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&q=80" alt="Estudando Python" class="timeline-img">
+                <h3>Formação</h3>
+                <p>Entrei no ensino medio, e comecei a me aprofundar em programação, minha primeira linguagem foi python, que aprendi em um curso da usp</p>
+                <div class="mt-3">
+                    <span class="badge bg-warning me-2">Formação</span>
+                    <span class="badge bg-danger">Python</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ano 4 -->
+        <section class="row timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content timeline-right">
+                <div class="timeline-date">2025</div>
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Desenvolvedor Web" class="timeline-img">
+                <h3>Atualidade</h3>
+                <p>Terminei o curso de python e estou me formando como um desenvolvedor Web, Aprendi html, css, javascript, e react </p>
+                <div class="mt-3">
+                    <span class="badge bg-primary me-2">Profissional</span>
+                    <span class="badge bg-success">Web Developer</span>
+                </div>
+                <div class="mt-3">
+                    <button class="btn btn-outline-primary btn-sm">
+                        <i class="fas fa-plus-circle me-2"></i>Ver mais
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ano 5 -->
+        <section class="row timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content timeline-left">
+                <div class="timeline-date">2030</div>
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" alt="Engenharia de Software" class="timeline-img">
+                <h3>Futuro</h3>
+                <p>Espero estar formado no curso tecnico, e cursando engenharia de software</p>
+                <div class="mt-3">
+                    <span class="badge bg-info me-2">Futuro</span>
+                    <span class="badge bg-secondary">Software Engineer</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ano 6 -->
+        <section class="row timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content timeline-right">
+                <div class="timeline-date">2035 + </div>
+                <img src="https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Trabalhando em Big Tech" class="timeline-img">
+                <h3>Futuro distante</h3>
+                <p>Espero estar formado em engenharia de software, e trabalhando em uma empresa de tecnologia como uma big tech, ou com minha propria empresa</p>
+                <div class="mt-3">
+                    <span class="badge bg-success me-2">Big Tech</span>
+                    <span class="badge bg-warning">Graduação</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- CTA Section -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4">Quer saber mais sobre minha jornada?</h2>
+            <p class="lead mb-4">Entre em contato ou conecte-se comigo nas redes sociais!</p>
+            <a href="#" class="btn btn-primary me-2">
+                <i class="fas fa-envelope me-2"></i>Contato
+            </a>
+            <a href="#" class="btn btn-outline-primary">
+                <i class="fab fa-linkedin me-2"></i>LinkedIn
+            </a>
+        </div>
+    </section>
+    
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4><i class="fas fa-clock me-2"></i>Minha Timeline</h4>
+                    <p>Uma jornada visual pelos momentos mais importantes da minha vida.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            <p class="text-center mb-0">&copy; 2025 Minha Linha do Tempo | Desenvolvido com <i class="fas fa-heart text-danger"></i></p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library (opcional) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- JS personalizado -->
+    <script src="script.js"></script>
+    
+    <!-- Inicialização do AOS (opcional) -->
+    <script>
+        // Inicializar biblioteca de animação se estiver presente
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 1000,
+                once: true
+            });
+        }
+        
+        // Verificar e aplicar tema preferido do usuário
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verifica se há preferência salva
+            const savedTheme = localStorage.getItem('theme');
+            
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+            
+            // Adiciona evento ao botão de alternar tema
+            document.getElementById('theme-toggle').addEventListener('click', function() {
+                document.body.classList.toggle('dark-theme');
+                
+                // Salva a preferência do usuário
+                if (document.body.classList.contains('dark-theme')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
