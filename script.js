@@ -257,4 +257,59 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Inicializar EmailJS e adicionar manipulador de formulário
+    (function() {
+        // Modo de demonstração - sem EmailJS
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const formStatus = document.getElementById('formStatus');
+            const formSuccess = document.getElementById('formSuccess');
+            const formError = document.getElementById('formError');
+            const submitBtn = this.querySelector('button[type="submit"]');
+            
+            // Desabilitar o botão de envio para simular o processo
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Enviando...';
+            
+            // Obter dados do formulário (para demonstração)
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Registrar no console os dados que seriam enviados
+            console.log('Dados do formulário:', { name, email, subject, message });
+            
+            // Simular processo de envio
+            setTimeout(function() {
+                // Simular sucesso
+                formStatus.classList.remove('d-none');
+                formSuccess.classList.remove('d-none');
+                formError.classList.add('d-none');
+                
+                // Resetar o formulário
+                document.getElementById('contactForm').reset();
+                
+                // Restaurar o botão após 2 segundos
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Enviar Mensagem';
+                    
+                    // Fechar o modal após 3 segundos
+                    setTimeout(() => {
+                        const contactModal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+                        contactModal.hide();
+                        
+                        // Ocultar mensagem de status após fechar o modal
+                        setTimeout(() => {
+                            formStatus.classList.add('d-none');
+                            formSuccess.classList.add('d-none');
+                        }, 500);
+                    }, 3000);
+                }, 2000);
+            }, 1500); // Simular atraso de rede
+        });
+    })();
 }); 
