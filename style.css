@@ -199,144 +199,68 @@ body {
     .timeline-line {
         left: 30px;
     }
-
-    .timeline-content {
-        width: 90%;
-        margin: 0 auto;
-        padding: 20px;
-    }
-
-    .timeline-img {
-        height: 200px;
-    }
-
+    
     .timeline-dot {
-        top: 15px;
+        left: 30px;
     }
-
-    .timeline-left,
-    .timeline-right {
-        width: 100%;
-        left: 0;
-    }
-
-    .timeline-content.timeline-left {
+    
+    .timeline-left, .timeline-right {
+        left: 60px;
+        width: calc(100% - 80px);
         margin-right: 0;
-        padding-right: 0;
-    }
-
-    .timeline-content.timeline-right {
         margin-left: 0;
-        padding-left: 0;
+        padding-right: 20px;
+        padding-left: 20px;
     }
-
-    .navbar-brand {
-        font-size: 1.2rem;
+    
+    .timeline-content {
+        padding: 20px 15px;
     }
-
-    .navbar-nav {
-        margin-top: 10px;
-    }
-
-    .nav-link {
-        padding: 5px 10px;
-    }
-
-    .btn {
-        padding: 5px 10px;
-    }
-
-    .header {
-        padding: 60px 15px 40px;
-    }
-
-    .header::after {
-        bottom: -30px;
-        height: 60px;
-    }
-
-    .timeline-container > .text-center {
-        padding: 30px 20px;
-        margin-bottom: 40px;
-    }
-
-    .timeline-item {
-        margin-bottom: 80px;
-    }
-
+    
     .timeline-date {
-        padding: 8px 20px;
         font-size: 0.9rem;
+        padding: 8px 18px;
     }
-
-    .display-4 {
-        font-size: 1.8rem;
+    
+    .timeline-img {
+        height: 220px;
     }
-
-    .lead {
-        font-size: 1rem;
+    
+    .timeline-container > .text-center {
+        padding: 32px 15px 24px;
+        border-radius: 14px;
+        width: 90%;
+    }
+    
+    .header {
+        padding: 60px 15px 50px;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    .py-5 {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+    
+    .my-5 {
+        margin-top: 2.5rem !important;
+        margin-bottom: 2.5rem !important;
+    }
+    
+    .footer .social-icons {
+        justify-content: center;
+        margin-bottom: 16px;
     }
 }
 
 /* Ajustes para smartphones */
 @media (max-width: 576px) {
     .display-2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
-
-    .display-4 {
-        font-size: 1.5rem;
-    }
-
-    .lead {
-        font-size: 0.9rem;
-    }
-
-    .timeline-img {
-        height: 180px;
-    }
-
-    .timeline-date {
-        padding: 6px 15px;
-        font-size: 0.8rem;
-    }
-
-    .timeline-content {
-        padding: 15px;
-    }
-
-    .timeline-container > .text-center {
-        padding: 25px 15px;
-    }
-
-    /* Ajustes para seção Sobre */
-    .row.align-items-center {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .col-md-6 {
-        margin-bottom: 20px;
-    }
-
-    /* Ajustes para o modal de contato */
-    .modal-dialog {
-        margin: 10px;
-    }
-
-    .modal-content {
-        padding: 15px;
-    }
-
-    .modal-title {
-        font-size: 1.2rem;
-    }
-
-    .form-control {
-        padding: 6px;
-        font-size: 0.9rem;
-    }
-}
     
     .display-4 {
         font-size: 1.8rem;
@@ -379,7 +303,6 @@ body {
         font-size: 1rem;
     }
     
-@media (max-width: 768px) {
     /* Melhorar UX em telas pequenas */
     .timeline-dot {
         width: 20px;
